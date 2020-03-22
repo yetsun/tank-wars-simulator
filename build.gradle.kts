@@ -24,6 +24,10 @@ dependencies {
 	}
 }
 
+dependencies {
+	implementation("org.apache.commons:commons-math3:3.0")
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
