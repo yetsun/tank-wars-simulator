@@ -1,9 +1,15 @@
-package com.yetsun.tankwarssimulator
+package com.yetsun.tankwarssimulator.tank
 
-class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) {
+import com.yetsun.tankwarssimulator.utils.Dice
+
+class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) : Component {
 
     val dice: Dice = Dice()
     var hitPoint: Int = initialHitPoint
+
+    override fun getDisplayName(): String {
+        return "$name($level)"
+    }
 
     fun getReadyForGame() {
         hitPoint = initialHitPoint
@@ -40,3 +46,19 @@ class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitCh
     }
 
 }
+
+
+val panther1: Tank = Tank("Panther", 7, 1272, 3, 155)
+
+//    val tiger1: Tank = Tank("Tiger", 1550, 4, 170)
+val tiger1: Tank = Tank("Tiger", 7, 1400, 4, 187)
+
+//    val sturmtiger: Tank = Tank("Sturmtiger", 7, 1550, 5, 275)
+val sturmtiger: Tank = Tank("Sturmtiger", 7, 1450, 5, 307)
+
+val jagdtiger: Tank = Tank("Jagdtiger", 8, 1499, 3, 201)
+val kingtiger: Tank = Tank("King Tiger", 8, 1610, 4, 265)
+
+val stug3Early: Tank = Tank("Stug III early", 4, 500, 5, 115)
+val hetzer: Tank = Tank("Hetzer", 4, 440, 4, 80)
+

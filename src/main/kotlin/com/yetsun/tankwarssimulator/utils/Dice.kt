@@ -1,4 +1,4 @@
-package com.yetsun.tankwarssimulator
+package com.yetsun.tankwarssimulator.utils
 
 import java.util.*
 import kotlin.random.Random

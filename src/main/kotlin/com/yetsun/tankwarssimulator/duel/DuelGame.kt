@@ -1,6 +1,8 @@
-package com.yetsun.tankwarssimulator
+package com.yetsun.tankwarssimulator.duel
 
-class Game(private val tankOne: Tank, private val tankTwo: Tank) {
+import com.yetsun.tankwarssimulator.tank.Tank
+
+class DuelGame(private val tankOne: Tank, private val tankTwo: Tank) {
     /**
      * return the winner
      */
