@@ -1,6 +1,6 @@
 package com.yetsun.tankwarssimulator
 
-class Tank(val name: String, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) {
+class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) {
 
     val dice: Dice = Dice()
     var hitPoint: Int = initialHitPoint
