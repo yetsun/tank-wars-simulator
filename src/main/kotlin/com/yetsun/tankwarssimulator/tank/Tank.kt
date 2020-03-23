@@ -2,7 +2,7 @@ package com.yetsun.tankwarssimulator.tank
 
 import com.yetsun.tankwarssimulator.utils.Dice
 
-class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) : Component {
+class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitChance: Int, val baseDamage: Int) : BattleUnit {
 
     val dice: Dice = Dice()
     var hitPoint: Int = initialHitPoint
@@ -11,11 +11,11 @@ class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitCh
         return "$name($level)"
     }
 
-    fun getReadyForGame() {
+    override fun getReadyForGame() {
         hitPoint = initialHitPoint
     }
 
-    fun isAlive(): Boolean {
+    override fun isActive(): Boolean {
         return hitPoint > 0;
     }
 

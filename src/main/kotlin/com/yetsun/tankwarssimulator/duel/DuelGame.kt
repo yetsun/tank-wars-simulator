@@ -7,16 +7,16 @@ class DuelGame(private val tankOne: Tank, private val tankTwo: Tank) {
      * return the winner
      */
     fun startAndWinnerIs(): Tank? {
-        while (tankOne.isAlive() && tankTwo.isAlive()) {
+        while (tankOne.isActive() && tankTwo.isActive()) {
 //           logger.debug("New round")
             tankOne.hit(tankTwo)
             tankTwo.hit(tankOne)
         }
 
-        return if (!tankOne.isAlive() && !tankTwo.isAlive()) {
+        return if (!tankOne.isActive() && !tankTwo.isActive()) {
             null
         } else {
-            if (tankOne.isAlive()) tankOne else tankTwo
+            if (tankOne.isActive()) tankOne else tankTwo
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.yetsun.tankwarssimulator.company
 
-import com.yetsun.tankwarssimulator.tank.Component
+import com.yetsun.tankwarssimulator.tank.BattleUnit
 import com.yetsun.tankwarssimulator.tank.jagdtiger
 import com.yetsun.tankwarssimulator.tank.panther1
 import com.yetsun.tankwarssimulator.tank.stug3Early
@@ -14,7 +14,7 @@ class CompanyPlay {
 
     private fun simulate(company1: Company, company2: Company) {
 
-        val result: MutableMap<Component, Int> = mutableMapOf(company1 to 0, company2 to 0)
+        val result: MutableMap<BattleUnit, Int> = mutableMapOf(company1 to 0, company2 to 0)
 
         val game = CompanyGame(company1, company2)
 

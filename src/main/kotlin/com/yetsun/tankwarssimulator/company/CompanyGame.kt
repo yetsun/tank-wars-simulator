@@ -5,8 +5,8 @@ class CompanyGame(private val companyOne: Company, private val companyTwo: Compa
     fun startAndWinnerIs(): Company? {
 
         while (companyOne.isActive() && companyTwo.isActive()) {
-            val companyOneAliveTanks = companyOne.getAliveTanks()
-            val companyTwoAliveTanks = companyTwo.getAliveTanks()
+            val companyOneAliveTanks = companyOne.getActiveTanks()
+            val companyTwoAliveTanks = companyTwo.getActiveTanks()
 
             val companyOneTarget = companyTwoAliveTanks[0]
             val companyTwoTarget = companyOneAliveTanks[0]

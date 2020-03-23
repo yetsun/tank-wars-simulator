@@ -1,6 +1,6 @@
 package com.yetsun.tankwarssimulator.duel
 
-import com.yetsun.tankwarssimulator.tank.Component
+import com.yetsun.tankwarssimulator.tank.BattleUnit
 import com.yetsun.tankwarssimulator.tank.Tank
 import com.yetsun.tankwarssimulator.tank.panther1
 import com.yetsun.tankwarssimulator.tank.tiger1
@@ -37,7 +37,7 @@ class DuelPlay {
     }
 
     private fun simulate(tank1: Tank, tank2: Tank) {
-        val result: MutableMap<Component, Int> = mutableMapOf(tank1 to 0, tank2 to 0)
+        val result: MutableMap<BattleUnit, Int> = mutableMapOf(tank1 to 0, tank2 to 0)
         val game = DuelGame(tank1, tank2)
 
         val repeatCount = 3000000

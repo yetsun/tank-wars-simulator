@@ -1,6 +1,6 @@
 package com.yetsun.tankwarssimulator.utils
 
-import com.yetsun.tankwarssimulator.tank.Component
+import com.yetsun.tankwarssimulator.tank.BattleUnit
 import mu.KotlinLogging
 import org.apache.commons.math3.distribution.ChiSquaredDistribution
 import java.text.NumberFormat
@@ -22,7 +22,7 @@ fun isImbalanceWithPValue(result: List<Int>): Boolean {
     return pValue < 0.05
 }
 
-fun showPlayResult(result: Map<Component, Int>) {
+fun showPlayResult(result: Map<BattleUnit, Int>) {
     val numberFormat: NumberFormat = NumberFormat.getNumberInstance(Locale.US)
 
     val component1 = result.keys.elementAt(0)

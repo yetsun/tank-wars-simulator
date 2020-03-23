@@ -1,20 +1,20 @@
 package com.yetsun.tankwarssimulator.company
 
-import com.yetsun.tankwarssimulator.tank.Component
+import com.yetsun.tankwarssimulator.tank.BattleUnit
 import com.yetsun.tankwarssimulator.tank.Tank
 import kotlin.streams.toList
 
-class Company(private val tanks: List<Tank>) : Component {
+class Company(private val tanks: List<Tank>) : BattleUnit {
 
-    fun isActive(): Boolean {
-        return tanks.stream().anyMatch { t -> t.isAlive() }
+    override fun isActive(): Boolean {
+        return tanks.stream().anyMatch { t -> t.isActive() }
     }
 
-    fun getAliveTanks(): List<Tank> {
-        return tanks.stream().filter { t -> t.isAlive() }.toList()
+    fun getActiveTanks(): List<Tank> {
+        return tanks.stream().filter { t -> t.isActive() }.toList()
     }
 
-    fun getReadyForGame() {
+    override fun getReadyForGame() {
         tanks.forEach { t -> t.getReadyForGame() }
     }
 
