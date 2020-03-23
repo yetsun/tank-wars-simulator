@@ -39,6 +39,7 @@ class Play {
         val game = Game(tank1, tank2)
 
         val repeatCount = 3000000
+//        val repeatCount = 3
         repeat(repeatCount) {
 
             tank1.getReadyForGame()
@@ -48,7 +49,7 @@ class Play {
 
             if (winner != null) {
                 val count = result.get(winner)!! + 1
-                result.put(winner, count)
+                result[winner] = count
             }
         }
 
@@ -62,18 +63,16 @@ class Play {
         val tank1 = result.keys.elementAt(0)
         val tank2 = result.keys.elementAt(1)
 
-        println()
-        println("${tank1.name} vs ${tank2.name}")
+        logger.info("${tank1.name} vs ${tank2.name}")
         result.forEach { tank, winCount ->
             val displayName = tank.name.padStart(20)
-            println("${displayName} wins ${numberFormat.format(winCount)}")
+            logger.info("${displayName} wins ${numberFormat.format(winCount)}")
         }
 
-        if (isImbalance(result.values.toList())) {
-            println("imbalance")
+        if (isImbalanceWithPValue(result.values.toList())) {
+            logger.info("imbalance")
         } else {
-            println("balanced")
+            logger.info("balanced")
         }
-        println()
     }
 }

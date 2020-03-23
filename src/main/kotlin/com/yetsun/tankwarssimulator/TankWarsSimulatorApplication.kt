@@ -8,4 +8,6 @@ class TankWarsSimulatorApplication
 
 fun main(args: Array<String>) {
 	runApplication<TankWarsSimulatorApplication>(*args)
+
+	Play().simulate()
 }

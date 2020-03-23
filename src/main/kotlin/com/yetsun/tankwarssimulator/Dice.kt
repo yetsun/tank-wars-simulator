@@ -8,7 +8,7 @@ class Dice() {
 
     fun roll(): Int {
         val face = random.nextInt(1, 7)
-//        println("roll a dice $face")
+//        logger.debug("roll a dice $face")
         return face
     }
 }

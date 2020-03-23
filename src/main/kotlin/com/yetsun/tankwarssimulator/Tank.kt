@@ -17,9 +17,9 @@ class Tank(val name: String, val level: Int, var initialHitPoint: Int, val hitCh
         if (hitOrMiss()) {
             val damage = calculateDamage()
             anotherTank.receiveDamage(damage)
-//            println("$name hit ${anotherTank.name} damage $damage")
-        }else{
-//            println("$name miss ${anotherTank.name}")
+//            logger.debug("$name hit ${anotherTank.name} damage $damage")
+        } else {
+//            logger.debug("$name miss ${anotherTank.name}")
         }
     }
 

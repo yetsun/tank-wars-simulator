@@ -19,13 +19,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.apache.commons:commons-math3:3.0")
+	implementation("io.github.microutils:kotlin-logging:1.7.9")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
-}
-
-dependencies {
-	implementation("org.apache.commons:commons-math3:3.0")
 }
 
 tasks.withType<Test> {
