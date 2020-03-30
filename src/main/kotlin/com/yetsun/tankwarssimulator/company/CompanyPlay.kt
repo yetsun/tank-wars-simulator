@@ -1,15 +1,19 @@
 package com.yetsun.tankwarssimulator.company
 
-import com.yetsun.tankwarssimulator.tank.BattleUnit
-import com.yetsun.tankwarssimulator.tank.jagdtiger
-import com.yetsun.tankwarssimulator.tank.panther1
-import com.yetsun.tankwarssimulator.tank.stug3Early
+import com.yetsun.tankwarssimulator.tank.*
 import com.yetsun.tankwarssimulator.utils.showPlayResult
 
 class CompanyPlay {
 
     fun simulate() {
+        simulate(Company(listOf(tiger1, stug3Early)), Company(listOf(jagdtiger)))
+        simulate(Company(listOf(tiger1, hetzer)), Company(listOf(jagdtiger)))
+
         simulate(Company(listOf(panther1, stug3Early)), Company(listOf(jagdtiger)))
+        simulate(Company(listOf(panther1, hetzer)), Company(listOf(jagdtiger)))
+
+        simulate(Company(listOf(sturmtiger, stug3Early)), Company(listOf(jagdtiger)))
+        simulate(Company(listOf(sturmtiger, hetzer)), Company(listOf(jagdtiger)))
     }
 
     private fun simulate(company1: Company, company2: Company) {
